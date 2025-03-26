@@ -1,0 +1,110 @@
+{
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.avif": {
+    "size": 3372,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.avif": {
+    "size": 2714,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.avif": {
+    "size": 2478,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.avif": {
+    "size": 8735,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.avif": {
+    "size": 2251,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.avif": {
+    "size": 3355,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.avif": {
+    "size": 35671,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.avif": {
+    "size": 11983,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.avif": {
+    "size": 23008,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-cuddle-png-w-512-h-512-fit-base.avif": {
+    "size": 14805,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/mountain-png-w-512-h-512-fit-base.avif": {
+    "size": 18767,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.jpg": {
+    "size": 9372,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.jpg": {
+    "size": 6496,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.jpg": {
+    "size": 7927,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.jpg": {
+    "size": 9223,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.jpg": {
+    "size": 7497,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.png": {
+    "size": 85834,
+    "contentType": "image/png"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.png": {
+    "size": 742630,
+    "contentType": "image/png"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.png": {
+    "size": 513449,
+    "contentType": "image/png"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.png": {
+    "size": 625646,
+    "contentType": "image/png"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.avif": {
+    "size": 9529,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/5-png-w-512-h-512-fit-base.avif": {
+    "size": 16481,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.avif": {
+    "size": 33005,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.png": {
+    "size": 673545,
+    "contentType": "image/png"
+  },
+  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.jpg": {
+    "size": 43032,
+    "contentType": "image/jpeg"
+  },
+  "./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base.avif": {
+    "size": 6790,
+    "contentType": "image/avif"
+  },
+  "./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base": {
+    "size": 16391,
+    "contentType": "image/jpeg"
+  }
+}
