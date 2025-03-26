@@ -47,7 +47,7 @@ export default function Index() {
 					>
 						The <strong>very real</strong> review site for
 						<br />
-						<strong>very fake</strong> cocktail bars.
+						<strong>very fake</strong> cocktails.
 					</p>
 				</div>
 				<ul className="mt-16 flex max-w-3xl flex-wrap justify-center gap-2 sm:gap-4 xl:mt-0 xl:grid xl:grid-flow-col xl:grid-cols-5 xl:grid-rows-6">

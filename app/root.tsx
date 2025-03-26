@@ -75,7 +75,7 @@ export const meta: Route.MetaFunction = ({ data }) => {
 		{ title: data ? 'MockTails' : 'Error | MockTails' },
 		{
 			name: 'description',
-			content: `The very real review site for very fake cocktail bars`,
+			content: `The very real review site for very fake cocktails`,
 		},
 	]
 }
@@ -261,12 +261,17 @@ function App() {
 
 function Logo() {
 	return (
-		<Link to="/" className="group grid leading-snug">
-			<span className="font-light transition group-hover:-translate-x-1">
-				Mock
+		<Link to="/" className="group flex">
+			<span className="translate-y-[2px] text-4xl transition group-hover:rotate-[-13deg]">
+				🍸
 			</span>
-			<span className="font-bold transition group-hover:translate-x-1">
-				Tails
+			<span className="grid leading-snug">
+				<span className="font-light transition group-hover:-translate-x-1">
+					Mock
+				</span>
+				<span className="font-bold transition group-hover:translate-x-1">
+					Tails
+				</span>
 			</span>
 		</Link>
 	)
