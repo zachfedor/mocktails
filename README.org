@@ -8,11 +8,13 @@
 
 Strategies for Using Mock Data in Dev, Tests, and Demos
 
-@zachfedor
+[[https://github.com/zachfedor/mocktails]]
 
 * Introduction
 
 ** Some Context
+
+@zachfedor
 
 - co-organize TechLancaster
 - self-taught developer
@@ -322,7 +324,6 @@ export const handlers = [
 Thanks!
 
 Any Questions?
-
 
 * Colophon
 
