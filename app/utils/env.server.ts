@@ -26,6 +26,9 @@ const schema = z.object({
 	AWS_REGION: z.string(),
 	AWS_ENDPOINT_URL_S3: z.string().url(),
 	BUCKET_NAME: z.string(),
+
+	GOOGLE_PLACES_API_KEY: z.string(),
+	ANTHROPIC_API_KEY: z.string(),
 })
 
 declare global {

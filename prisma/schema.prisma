@@ -29,6 +29,28 @@ model User {
   passkey     Passkey[]
 }
 
+model Place {
+  id      String @id @default(cuid())
+  name    String
+  slug    String @unique
+  address String
+  hours   Json
+
+  notes   Note[]
+  cocktails Cocktail[]
+}
+
+model Cocktail {
+  id      String @id @default(cuid())
+  name    String
+  description String
+  ingredients Json
+  rating  Float @default(0)
+
+  place   Place  @relation(fields: [placeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  placeId String
+}
+
 model Note {
   id      String @id @default(cuid())
   title   String
@@ -39,6 +61,9 @@ model Note {
 
   owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   ownerId String
+
+  place   Place  @relation(fields: [placeId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  placeId String
 
   images NoteImage[]
 

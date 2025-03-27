@@ -2,19 +2,19 @@ import { getFormProps, useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import { invariantResponse } from '@epic-web/invariant'
 import { formatDistanceToNow } from 'date-fns'
-import { Img } from 'openimg/react'
 import { useRef, useEffect } from 'react'
 import { data, Form, Link } from 'react-router'
 import { z } from 'zod'
 import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 import { floatingToolbarClassName } from '#app/components/floating-toolbar.tsx'
 import { ErrorList } from '#app/components/forms.tsx'
+import { NoteCard } from '#app/components/notes'
 import { Button } from '#app/components/ui/button.tsx'
 import { Icon } from '#app/components/ui/icon.tsx'
 import { StatusButton } from '#app/components/ui/status-button.tsx'
 import { requireUserId } from '#app/utils/auth.server.ts'
 import { prisma } from '#app/utils/db.server.ts'
-import { getNoteImgSrc, useIsPending } from '#app/utils/misc.tsx'
+import { useIsPending } from '#app/utils/misc.tsx'
 import { requireUserWithPermission } from '#app/utils/permissions.server.ts'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
 import { userHasPermission, useOptionalUser } from '#app/utils/user.ts'
@@ -32,6 +32,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 			updatedAt: true,
 			images: {
 				select: {
+					id: true,
 					altText: true,
 					objectKey: true,
 				},
@@ -117,29 +118,8 @@ export default function NoteRoute({
 			aria-labelledby="note-title"
 			tabIndex={-1} // Make the section focusable without keyboard navigation
 		>
-			<h2 id="note-title" className="mb-2 pt-12 text-h2 lg:mb-6">
-				{loaderData.note.title}
-			</h2>
-			<div className={`${displayBar ? 'pb-24' : 'pb-12'} overflow-y-auto`}>
-				<ul className="flex flex-wrap gap-5 py-5">
-					{loaderData.note.images.map((image) => (
-						<li key={image.objectKey}>
-							<a href={getNoteImgSrc(image.objectKey)}>
-								<Img
-									src={getNoteImgSrc(image.objectKey)}
-									alt={image.altText ?? ''}
-									className="h-32 w-32 rounded-lg object-cover"
-									width={512}
-									height={512}
-								/>
-							</a>
-						</li>
-					))}
-				</ul>
-				<p className="whitespace-break-spaces text-sm md:text-lg">
-					{loaderData.note.content}
-				</p>
-			</div>
+			<NoteCard note={loaderData.note} displayBar={displayBar} />
+
 			{displayBar ? (
 				<div className={floatingToolbarClassName}>
 					<span className="text-sm text-foreground/90 max-[524px]:hidden">

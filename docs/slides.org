@@ -1,0 +1,306 @@
+#+title:      fake it while you make it
+#+date:       [2025-03-12 Wed 09:24]
+#+filetags:   :dev:talk:tl:
+#+identifier: 20250312T092453
+
+
+* Fake It +Till+ While You Make It
+
+Strategies for Using Mock Data in Dev, Tests, and Demos
+
+@zachfedor
+
+* Introduction
+
+** Some Context
+
+- co-organize TechLancaster
+- self-taught developer
+- mostly React for ~10 years
+- prototyping early-stage startup apps
+
+** The Problem
+
+Building a platform powered by user-generated content
+
+...but we don't have users yet.
+
+** Overview
+
+- Faker
+- Content generation via LLM
+- MSW (Mock Service Worker)
+
+** The Presentation Stack
+
+- Techniques are stack agnostic
+- Examples are in JavaScript
+- Demo app is built with React
+
+*** R.I.P. Create React App
+
+The React team deprecated CRA in [[https://react.dev/blog/2025/02/14/sunsetting-create-react-app][Feb 2025]] recommending to migrate to
+
+- a framework (e.g. Next, Remix, Astro, Expo, TanStack Start, etc.)
+- a build tool (e.g. Vite, Parcel, Rsbuild, etc.)
+
+*** The Epic Stack
+
+An [[https://www.epicweb.dev/epic-stack][opinionated full-stack starter template]] including:
+- Remix as the web framework
+- deployment handled by Fly.io via Docker
+- a SQLite database with Prisma ORM
+- components from Radix UI and styled with Tailwind
+- linting, logging, testing, [[https://github.com/epicweb-dev/epic-stack/blob/main/docs/features.md][and more...]]
+
+#+begin_src
+$ npx create-remix@latest --typescript --install --template epicweb-dev/epic-stack
+#+end_src
+
+* The Demo App
+
+I present to you:
+
+[[http://localhost:3000][MockTails]]
+
+* Back To The Problem
+
+** Where do we get users?
+
+We mock them!
+
+* Start With A Schema
+
+What is the shape of the data?
+
+- Full-Stack :: Object-Relational Mapping (ORM)
+- TypeScript :: Interface
+- JavaScript :: 🤷
+
+* User Schema
+
+** Prisma ORM
+
+[[file:~/code/mocktails/prisma/schema.prisma::model User {][Schema File]]
+
+#+begin_src prisma
+model User {
+  id       String  @id @default(cuid())
+  username String  @unique
+  name     String?
+}
+#+end_src
+
+#+begin_src js
+import { type User } from '@prisma/client'
+#+end_src
+
+** TypeScript Interface
+
+[[https://www.typescriptlang.org/docs/handbook/2/objects.html][TypeScript Handbook: Objects]]
+
+#+begin_src js
+interface User {
+  id: string;
+  username: string;
+  name?: string;
+}
+#+end_src
+
+But maybe add in schema validation (e.g [[https://zod.dev/?id=basic-usage][zod]]) or your own type guards...
+
+** JavaScript Docstring
+
+[[https://jsdoc.app/about-getting-started][JSDoc: Getting Started]]
+
+#+begin_src js
+/**
+ * @typedef User
+ * @type {object}
+ * @property {string} id - primary key
+ * @property {string} username - unique identifier
+ * @property {string} [name] - optional full name
+ */
+#+end_src
+
+* User Factory
+
+Factory function to help create mocked users
+
+#+begin_src js
+function createUser(): User {
+  return {
+    id: "abcdef",
+    username: "zachfedor",
+    name: "Zach Fedor"
+  }
+}
+#+end_src
+
+* Faker
+
+#+begin_quote
+Generates fake (but reasonable) data
+#+end_quote
+
+[[https://fakerjs.dev/guide/][Faker: Getting Started]]
+
+** Basic Types
+
+#+begin_src js
+faker.string.alphanumeric(16)
+
+faker.string.hexadecimal(6)
+
+faker.number.int({ min: 1, max: 5 })
+
+faker.date.soon()
+#+end_src
+
+** Topic Specific
+
+#+begin_src js
+faker.color.rgb()
+
+faker.internet.email()
+
+faker.location.streetAddress()
+
+faker.finance.creditCardNumber()
+
+faker.airline.airport()
+
+faker.company.buzzVerb()
+
+faker.hacker.phrase()
+#+end_src
+
+** In the Demo App
+
+[[file:~/code/mocktails/tests/db-utils.ts::export function createUser() {][User factory with Faker]]
+
+* Database Seeding
+
+- Prisma handles migrations and seeding for you
+  - Create enough mocked data for each model
+- *AND* create real relationships between mocked data
+
+ [[file:~/code/mocktails/prisma/seed.ts::async function seed() {][Prisma seed script]] 
+
+[[http://localhost:3000/users][Users in the demo app]] 
+  
+* Who is the data for?
+
+Mock data should cater to three audiences:
+
+1. You (the developer)
+2. Client (the layperson)
+3. You again (the tester)
+
+* Mocking is a Balance
+
+Trade off between realism and simplicity
+
+** So what happens if you need more realism?
+
+Remember, the "I" in LLM stands for "Intelligence"
+
+* Our First User is an LLM
+
+- Script to download some similar content (via scraping, an API, or manual data entry)
+- Script to run analysis and generate summaries according to user persona
+- Add to seed script
+  
+** Generating a Prompt 
+
+- Some input to parse
+- Make use of system prompts as a preamble
+- Stress the importance of parsable output
+- Then parse the output
+
+  Bonus points for validating it against your schema!
+  
+** In The Demo App
+
+[[file:~/code/mocktails/app/utils/ai.server.ts::export async function createCocktailList(place: Place) {][Crafting a cocktail factory]]
+  
+* AI Image Generation?
+
+Generate a logo for MockTails, my very real review site for very fake cocktails.
+#+attr_org: :width 400
+[[../tests/fixtures/images/notes/generated-logo.webp]]
+
+#+begin_quote
+Here's your playful and stylish logo for "MockTails"! Let me know if you'd like any adjustments to the design or color scheme.
+#+end_quote
+
+* Wait. I thought you said this was a Front End talk???
+
+What if I don't have a database or even a back end?
+
+* Answer Questions With Questions
+
+What if you do?
+
+- What happens if you're working ahead of them?
+- What happens if it's down?
+- What happens if you're working offline? Or your users are?
+- What if it's not down? How do you test error states? Low latency?
+
+* MSW
+
+#+begin_quote
+Intercept outgoing requests, observe them, and respond to them using mocked responses
+#+end_quote
+
+[[https://mswjs.io/docs/getting-started][MSW: Getting Started]]
+
+** The Basic Gist
+
+- Define an array of network handlers (i.e. interceptors)
+- Each handler is for an HTTP method to a specific URL
+- Access the request if you need to
+- Respond however you want
+
+#+begin_src js
+import { http, HttpResponse } from 'msw'
+
+export const handlers = [
+  // Intercept "GET https://example.com/user" requests...
+  http.get('https://example.com/user', () => {
+    // ...and respond to them using this JSON response.
+    return HttpResponse.json({
+      id: 'c7b3d8e0-5e0b-4b0f-8b3a-3b9f4b3d3b3d',
+      firstName: 'John',
+      lastName: 'Maverick',
+    })
+  }),
+]
+#+end_src
+
+** For Those With Questions
+
+- Isn't this duplicating your backend code? no.
+- Different handlers for different environments: browser vs tests
+- Handles GraphQL and WebSocket endpoints, too
+
+  And yes, you can use your faker factories in there if you want ;)
+
+** In The Demo App
+
+[[file:~/code/mocktails/tests/mocks/github.ts::export const handlers: Array<HttpHandler> = \[][Mocking Requests to GitHub]]
+
+* Principles & Goals
+
+- Test outcomes, not implementations
+- Tests should be deterministic
+- Testing flows vs components
+
+* Colophon
+
+This presentation was created using:
+- editor :: [[https://www.gnu.org/software/emacs/][emacs]]
+- markup :: [[https://orgmode.org/][org-mode]]
+- slides :: [[https://github.com/rlister/org-present][org-present]]
+- theme :: doom-nord from [[https://github.com/doomemacs/themes][doom-themes]]
+- config :: [[https://github.com/zachfedor/dotfiles/][zachfedor/dotfiles]]

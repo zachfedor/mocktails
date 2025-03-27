@@ -1,110 +1,258 @@
 {
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.avif": {
-    "size": 3372,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.avif": {
-    "size": 2714,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.avif": {
-    "size": 2478,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.avif": {
-    "size": 8735,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.avif": {
-    "size": 2251,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.avif": {
-    "size": 3355,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.avif": {
-    "size": 35671,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.avif": {
-    "size": 11983,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.avif": {
-    "size": 23008,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-cuddle-png-w-512-h-512-fit-base.avif": {
-    "size": 14805,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/mountain-png-w-512-h-512-fit-base.avif": {
-    "size": 18767,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.jpg": {
-    "size": 9372,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.jpg": {
-    "size": 6496,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.jpg": {
-    "size": 7927,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.jpg": {
-    "size": 9223,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.jpg": {
-    "size": 7497,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.png": {
-    "size": 85834,
-    "contentType": "image/png"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.png": {
-    "size": 742630,
-    "contentType": "image/png"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.png": {
-    "size": 513449,
-    "contentType": "image/png"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.png": {
-    "size": 625646,
-    "contentType": "image/png"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.avif": {
-    "size": 9529,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/5-png-w-512-h-512-fit-base.avif": {
-    "size": 16481,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.avif": {
-    "size": 33005,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.png": {
-    "size": 673545,
-    "contentType": "image/png"
-  },
-  "./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.jpg": {
-    "size": 43032,
-    "contentType": "image/jpeg"
-  },
-  "./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base.avif": {
-    "size": 6790,
-    "contentType": "image/avif"
-  },
-  "./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base": {
-    "size": 16391,
-    "contentType": "image/jpeg"
-  }
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.avif": {
+		"size": 3372,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.avif": {
+		"size": 2714,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.avif": {
+		"size": 2478,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.avif": {
+		"size": 8735,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.avif": {
+		"size": 2251,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.avif": {
+		"size": 3355,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.avif": {
+		"size": 35671,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.avif": {
+		"size": 11983,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.avif": {
+		"size": 23008,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-cuddle-png-w-512-h-512-fit-base.avif": {
+		"size": 14805,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/mountain-png-w-512-h-512-fit-base.avif": {
+		"size": 18767,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 9372,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 6496,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 7927,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 9223,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 7497,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-256-h-256-fit-base.png": {
+		"size": 85834,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/kody-png-w-832-h-832-fit-base.png": {
+		"size": 742630,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/cute-koala-png-w-512-h-512-fit-base.png": {
+		"size": 513449,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-eating-png-w-512-h-512-fit-base.png": {
+		"size": 625646,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.avif": {
+		"size": 9529,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/5-png-w-512-h-512-fit-base.avif": {
+		"size": 16481,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.avif": {
+		"size": 33005,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/8-png-w-512-h-512-fit-base.png": {
+		"size": 673545,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/3-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 43032,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base.avif": {
+		"size": 6790,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/picsum-photos/id/192/400/300-w-400-h-300-fit-base": {
+		"size": 16391,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-832-h-832-fit-base.avif": {
+		"size": 7338,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/hibiscus-jpg-w-512-h-512-fit-base.avif": {
+		"size": 7607,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/4-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 34364,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/rosemary-jpg-w-512-h-512-fit-base.avif": {
+		"size": 15615,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/sazerac-jpg-w-512-h-512-fit-base.avif": {
+		"size": 17355,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/eggnog-jpg-w-512-h-512-fit-base.avif": {
+		"size": 10442,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/gin-jpg-w-512-h-512-fit-base.avif": {
+		"size": 9427,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/hibiscus-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 27597,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/eggnog-jpg-w-base-h-base-fit-base.jpg": {
+		"size": 1799024,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/rosemary-jpg-w-base-h-base-fit-base.jpg": {
+		"size": 3301641,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/eggnog-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 30029,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-soccer-png-w-512-h-512-fit-base.avif": {
+		"size": 18826,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-coder-png-w-512-h-512-fit-base.avif": {
+		"size": 13576,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-mentor-png-w-512-h-512-fit-base.avif": {
+		"size": 14528,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/koala-mentor-png-w-512-h-512-fit-base.png": {
+		"size": 474621,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-832-h-832-fit-base.avif": {
+		"size": 7069,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-832-h-832-fit-base.avif": {
+		"size": 6584,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-832-h-832-fit-base.avif": {
+		"size": 9599,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/1-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 29707,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/0-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 43014,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/2-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 35480,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/blue-jpg-w-512-h-512-fit-base.avif": {
+		"size": 7490,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/zach-jpg-w-256-h-256-fit-base.avif": {
+		"size": 7459,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/kody-notes/mountain-png-w-512-h-512-fit-base.png": {
+		"size": 578772,
+		"contentType": "image/png"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/blue-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 22455,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/rosemary-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 37633,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/zach-jpg-w-832-h-832-fit-base.avif": {
+		"size": 22958,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/zach-jpg-w-832-h-832-fit-base.jpg": {
+		"size": 80300,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/cheers-jpg-w-512-h-512-fit-base.avif": {
+		"size": 9796,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/user/zach-jpg-w-256-h-256-fit-base.jpg": {
+		"size": 14439,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/cheers-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 31895,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/sazerac-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 39943,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/mojito-jpg-w-512-h-512-fit-base.avif": {
+		"size": 16778,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/gin-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 28550,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/mules-jpg-w-512-h-512-fit-base.avif": {
+		"size": 17548,
+		"contentType": "image/avif"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/mojito-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 38334,
+		"contentType": "image/jpeg"
+	},
+	"./tests/fixtures/openimg/fly-storage-tigris-dev/mock-bucket/notes/mules-jpg-w-512-h-512-fit-base.jpg": {
+		"size": 38633,
+		"contentType": "image/jpeg"
+	}
 }

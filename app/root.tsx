@@ -197,7 +197,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	)
 }
 
-function NavLink(props: React.ComponentProps<typeof RouterNavLink>) {
+export function NavLink(props: React.ComponentProps<typeof RouterNavLink>) {
 	return (
 		<RouterNavLink
 			{...props}
@@ -226,8 +226,8 @@ function App() {
 				<header className="container py-6">
 					<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 						<Logo />
-						<NavLink to="/recent">Recent Reviews</NavLink>
-						<NavLink to="/bars">All Bars</NavLink>
+						<NavLink to="/users">Users</NavLink>
+						<NavLink to="/bars">Bars</NavLink>
 						<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 							{searchBar}
 						</div>
@@ -250,6 +250,12 @@ function App() {
 
 				<div className="container flex justify-between pb-5 pt-5">
 					<Logo />
+					<nav className="flex gap-4">
+						<NavLink to="/about">About</NavLink>
+						<NavLink to="/tos">Terms of Service</NavLink>
+						<NavLink to="/privacy">Privacy</NavLink>
+						<NavLink to="/support">Support</NavLink>
+					</nav>
 					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
 				</div>
 			</div>
@@ -262,7 +268,7 @@ function App() {
 function Logo() {
 	return (
 		<Link to="/" className="group flex">
-			<span className="translate-y-[2px] text-4xl transition group-hover:rotate-[-13deg]">
+			<span className="origin-bottom translate-y-[2px] text-4xl transition group-hover:rotate-[-13deg]">
 				🍸
 			</span>
 			<span className="grid leading-snug">

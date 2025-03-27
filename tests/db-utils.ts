@@ -1,6 +1,53 @@
 import { faker } from '@faker-js/faker'
+import { Prisma } from '@prisma/client'
 import bcrypt from 'bcryptjs'
 import { UniqueEnforcer } from 'enforce-unique'
+import { fetchGoogleDetails } from '#app/utils/googlePlaces.server.ts'
+import { type PlaceToImport } from '#tests/mocks/places.ts'
+
+export async function createPlace({ placeId, ...rest }: PlaceToImport) {
+	const googleData = await fetchGoogleDetails(placeId)
+
+	return {
+		...rest,
+		address: googleData?.formatted_address ?? '',
+		hours: generateHours(),
+	}
+}
+
+Prisma
+
+// Generate operating hours
+function generateHours() {
+	const days = [
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+		'Sunday',
+	] as const
+
+	return days.reduce(
+		(acc, day) => {
+			const isClosed = day === 'Monday' && faker.datatype.boolean(0.4)
+
+			let hours: string
+			if (isClosed) {
+				hours = 'Closed'
+			} else {
+				const isWeekend = day === 'Friday' || day === 'Saturday'
+				const openHour = isWeekend ? '16:00' : '17:00'
+				const closeHour = isWeekend ? '02:00' : '00:00'
+				hours = `${openHour} - ${closeHour}`
+			}
+
+			return { ...acc, [day]: hours }
+		},
+		{} as Record<keyof typeof days, string>,
+	)
+}
 
 const uniqueUsernameEnforcer = new UniqueEnforcer()
 
@@ -22,6 +69,7 @@ export function createUser() {
 		.slice(0, 20)
 		.toLowerCase()
 		.replace(/[^a-z0-9_]/g, '_')
+
 	return {
 		username,
 		name: `${firstName} ${lastName}`,
@@ -41,45 +89,53 @@ export async function getNoteImages() {
 
 	noteImages = await Promise.all([
 		{
-			altText: 'a nice country house',
-			objectKey: 'notes/0.png',
-		},
-		{
-			altText: 'a city scape',
-			objectKey: 'notes/1.png',
-		},
-		{
-			altText: 'a sunrise',
-			objectKey: 'notes/2.png',
-		},
-		{
-			altText: 'a group of friends',
-			objectKey: 'notes/3.png',
-		},
-		{
-			altText: 'friends being inclusive of someone who looks lonely',
-			objectKey: 'notes/4.png',
-		},
-		{
-			altText: 'an illustration of a hot air balloon',
-			objectKey: 'notes/5.png',
-		},
-		{
 			altText:
-				'an office full of laptops and other office equipment that look like it was abandoned in a rush out of the building in an emergency years ago.',
-			objectKey: 'notes/6.png',
+				'hawaiian punch, blue curaçao, and an unhealthy amount of blue dye #1',
+			objectKey: 'notes/blue.jpg',
 		},
 		{
-			altText: 'a rusty lock',
-			objectKey: 'notes/7.png',
+			altText: 'cheers to the frickin weekend',
+			objectKey: 'notes/cheers.jpg',
 		},
 		{
-			altText: 'something very happy in nature',
-			objectKey: 'notes/8.png',
+			altText: 'eggnog has alcohol in it, right?',
+			objectKey: 'notes/eggnog.jpg',
 		},
 		{
-			altText: `someone at the end of a cry session who's starting to feel a little better.`,
-			objectKey: 'notes/9.png',
+			altText: 'a classic gin and tonic',
+			objectKey: 'notes/gin.jpg',
+		},
+		{
+			altText: 'flowers are for gardens, not drinks',
+			objectKey: 'notes/hibiscus.jpg',
+		},
+		{
+			altText: 'mojitos are the bestitos',
+			objectKey: 'notes/mojito.jpg',
+		},
+		{
+			altText: 'mules of the moscow variety',
+			objectKey: 'notes/mules.jpg',
+		},
+		{
+			altText: 'and you thought gin tasted like a pine tree',
+			objectKey: 'notes/rosemary.jpg',
+		},
+		{
+			altText: "i don't know what sazerac means, but dang is it tasty",
+			objectKey: 'notes/sazerac.jpg',
+		},
+		{
+			altText: `did you skip breakfast? cause it has egg whites in it`,
+			objectKey: 'notes/sour.jpg',
+		},
+		{
+			altText: `afternoon tea was never so exciting`,
+			objectKey: 'notes/twistedtea.jpg',
+		},
+		{
+			altText: `dark and smokey, like a crappy diner`,
+			objectKey: 'notes/whiskey.jpg',
 		},
 	])
 
