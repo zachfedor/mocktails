@@ -306,7 +306,9 @@ export const handlers = [
 - Tests should be deterministic
 - Testing flows vs components
 
-* Next Steps
+"Test" can mean unit tests, integration tests, or poking around during development or demos.
+
+* What else is there?
 
 - Playwright testing in browser
 - Storybook components
