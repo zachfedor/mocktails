@@ -41,7 +41,7 @@ Building a platform powered by user-generated content
 
 The React team deprecated CRA in [[https://react.dev/blog/2025/02/14/sunsetting-create-react-app][Feb 2025]] recommending to migrate to
 
-- a framework (e.g. Next, Remix, Astro, Expo, TanStack Start, etc.)
+- a framework (e.g. Next, Remix, Astro, Expo, Gatsby, etc.)
 - a build tool (e.g. Vite, Parcel, Rsbuild, etc.)
 
 *** The Epic Stack
@@ -228,7 +228,7 @@ Remember, the "I" in LLM stands for "Intelligence"
 
 Generate a logo for MockTails, my very real review site for very fake cocktails.
 #+attr_org: :width 400
-[[../tests/fixtures/images/notes/generated-logo.webp]]
+[[./tests/fixtures/images/notes/generated-logo.webp]]
 
 #+begin_quote
 Here's your playful and stylish logo for "MockTails"! Let me know if you'd like any adjustments to the design or color scheme.
@@ -255,12 +255,14 @@ Intercept outgoing requests, observe them, and respond to them using mocked resp
 
 [[https://mswjs.io/docs/getting-started][MSW: Getting Started]]
 
-** The Basic Gist
+** The Gist
 
 - Define an array of network handlers (i.e. interceptors)
 - Each handler is for an HTTP method to a specific URL
 - Access the request if you need to
-- Respond however you want
+- Respond however you want *instead* of making the real request
+
+** Get a User
 
 #+begin_src js
 import { http, HttpResponse } from 'msw'
@@ -282,9 +284,17 @@ export const handlers = [
 
 - Isn't this duplicating your backend code? no.
 - Different handlers for different environments: browser vs tests
+- Passthrough whenever you want
 - Handles GraphQL and WebSocket endpoints, too
 
   And yes, you can use your faker factories in there if you want ;)
+
+** What happens when things change?
+
+1. Auto-generated (e.g. OpenAPI / Swagger)
+2. Keep snapshots of actual requests
+
+[[https://mswjs.io/docs/recipes/keeping-mocks-in-sync][Keeping Mocks In Sync]]
 
 ** In The Demo App
 
@@ -295,6 +305,22 @@ export const handlers = [
 - Test outcomes, not implementations
 - Tests should be deterministic
 - Testing flows vs components
+
+* Next Steps
+
+- Playwright testing in browser
+- Storybook components
+
+* If you build it
+
+...users will come eventually?
+
+* The End
+
+Thanks!
+
+Any Questions?
+
 
 * Colophon
 
