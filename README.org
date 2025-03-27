@@ -236,6 +236,14 @@ Generate a logo for MockTails, my very real review site for very fake cocktails.
 Here's your playful and stylish logo for "MockTails"! Let me know if you'd like any adjustments to the design or color scheme.
 #+end_quote
 
+* Mock Images
+
+In order of fidelity, low to high:
+
+1. [[https://placehold.co/][Placehold]]
+2. [[https://picsum.photos/][Lorem Picsum]]
+3. [[https://unsplash.com/][Unsplash]]
+
 * Wait. I thought you said this was a Front End talk???
 
 What if I don't have a database or even a back end?
